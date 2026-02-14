@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>hermana_de_vida.exe</title>
+
+<style>
+body {
+    background-color: black;
+    color: #00ff88;
+    font-family: monospace;
+    padding: 20px;
+}
+
+#terminal {
+    white-space: pre-line;
+}
+
+input {
+    background: black;
+    border: none;
+    color: #00ff88;
+    font-family: monospace;
+    font-size: 16px;
+    outline: none;
+}
+</style>
+</head>
+
+<body>
+
+<div id="terminal">
+nara@memory:~$ 
+</div>
+
+<input type="text" id="command" autofocus>
+
+<script>
+
+const terminal = document.getElementById("terminal");
+const input = document.getElementById("command");
+
+const message = `
+Inicializando recuerdos...
+Cargando risas...
+Detectando única persona que se ríe de mis chistes...
+
+Resultado: 1 coincidencia encontrada.
+
+Querida hermana de la vida,
+
+Sos oficialmente la única persona que se ríe de mis chistes.
+Y eso te convierte en un ser estadísticamente extraordinario.
+
+Registro histórico:
+- Aprendió a mezclar comida de forma rara ✔
+- Come chocolate en polvo a cucharadas antes de mezclar ✔
+- Soporta mis ideas raras desde siempre ✔
+
+Conclusión del sistema:
+Más que amiga.
+Más que compañera.
+Familia elegida.
+
+Recomendacion: Leer "readme file"
+
+System.out.println("Te quiero infinito.");
+`;
+
+function typeWriter(text, i = 0) {
+    if (i < text.length) {
+        terminal.innerHTML += text.charAt(i);
+        setTimeout(() => typeWriter(text, i + 1), 25);
+    }
+}
+
+input.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        if (input.value === "run hermana_de_vida.exe") {
+            input.style.display = "none";
+            typeWriter(message);
+        } else {
+            terminal.innerHTML += "\nComando no reconocido.";
+        }
+    }
+});
+
+</script>
+
+</body>
+</html>
