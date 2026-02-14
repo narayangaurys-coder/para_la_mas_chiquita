@@ -2,16 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>para_la_mas_chiquita.exe</title>
 
 <style>
+
 body {
     background-color: black;
     color: #00ff88;
     font-family: monospace;
-    padding: 64px;
+    padding: 32px;
+    font-size: clamp(16px, 4vw, 22px);
 }
-
 #terminal {
     white-space: pre-line;
 }
@@ -21,7 +23,7 @@ input {
     border: none;
     color: #00ff88;
     font-family: monospace;
-    font-size: 64px;
+    font-size: clamp(16px, 4vw, 22px);
     outline: none;
 }
 </style>
@@ -30,7 +32,7 @@ input {
 <body>
 
 <div id="terminal">
-nara@memory:~$ 
+<span>nara@memory:~$ </span><span class="cursor">_</span>
 </div>
 
 <input type="text" id="command" autofocus>
@@ -104,3 +106,12 @@ input.addEventListener("keydown", function(e) {
 
 </body>
 </html>
+.cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
