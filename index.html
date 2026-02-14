@@ -6,7 +6,15 @@
 <title>para_la_mas_chiquita.exe</title>
 
 <style>
+.cursor {
+    animation: blink 1s infinite;
+}
 
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
 body {
     background-color: black;
     color: #00ff88;
@@ -106,12 +114,4 @@ input.addEventListener("keydown", function(e) {
 
 </body>
 </html>
-.cursor {
-    animation: blink 1s infinite;
-}
 
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
